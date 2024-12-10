@@ -1,0 +1,15 @@
+body{
+    background-image: url(Html\ tugadi.jpg);
+    background-repeat: no-repeat;
+}
+h1
+{
+    color: rgb(49, 49, 171);
+}
+h3{
+    color: rgb(152, 91, 10);
+}
+
+.button{
+    color: black;
+}

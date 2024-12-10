@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form action="submit.html"method="post">
+		<!--Form elemenlari bu yerda bo'ladi-->
+	</form>
+	<form>
+		<label for="name">Ismingiz</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<label for="email">Email</label>
+		<input type="email" id="Email" name="email"><br><br>
+
+		<label for="password">Password</label>
+		<input type="password" name="password" name="password"><br><br>
+
+		<label for="dob">Tug'ilgan sana</label>
+		<input type="date" id="dob" name="dob"><br><br>
+
+		<label for="file">Rasm yuklash</label>
+		<input type="file" id="file" name="file"><br><br>
+
+			<label for="city">Shaharingiz</label>
+		<select id="city" name="city">
+			<option value="Andijon">Andijon</option>
+			<option value="Samarqand">Samarqand</option>
+			<option value="Buxoro">Buxoro</option>
+			<option value="Navoiy">Navoiy</option>
+			<option value="Jizax">Jizax</option>
+		</select><br><br>
+	
+		<label for="message">Xabaringiz</label>
+		<textarea id="message" name="message" rows="4" cols="50"></textarea>
+
+		<button type="submit">Yuborish</button>
+		<button type="reset">Tozalash</button>
+		
+	</form>
+	<form>
+	</form>
+	<form action="submit.html" method="post">
+		<h1>Talabalar ro'yhati</h1>
+
+		<label for="name">Ism va Familiya</label>
+		<input type="text" id="name" name="name" required><br><br>
+		
+
+		<label for="dob">Tug'ilgan sana</label>
+		<input type="date" id="dob" name="dob" required><br><br>
+
+		<label for="email">Email</label>
+		<input type="email" id="Email" name="email" required><br><br>
+
+		<label for="phone">Telefon</label>
+		<input type="telefon" id="phone" name="phone"><br><br>
+
+		<label for="city">Shaharingiz</label>
+		<select id="city" name="city"></select>
+		<option value="Andijon">Andijon</option>
+		<option value="Samarqand"></option>
+		<option value="Buxoro">Buxoro</option>
+		<option value="Jizax"></option>
+
+		<label for="message">Xabaringiz</label><br>
+		<textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+		<label for="file">Rasm yuklash:</label>
+		<input type="file" id="file" name="file"><br><br>
+	</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+		<form>
+			<label for="text">Matn</label>
+			<input type="text" id="text" name="text"><br><br>
+
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email"><br><br>
+
+			<label for="password">Parol:</label>
+			<input type="password" id="password" name="password"><br><br>
+
+			<label for="number">Son:</label>
+			<input type="number" id="number" name="number"><br><br>
+
+			<label for="date">Sana:</label>
+			<input type="date" id="date" name="date"><br><br>
+
+			<label for="checkbox">Tanlang:</label>
+			<input type="checkbox" id="checkbox" name="checkbox"><br><br>
+
+			<label for="radio">Tanlov</label>
+			<input type="radio" id="radio1" name="radio" value="1"> Tanlov
+			<input type="radio" id="radio2" name="radio" value="2"> Tanlov<br><br>
+
+			<label for="fruit">Mevani tanlang</label>
+			<select id="fruit" name="fruit">
+				<option value="apple">Olma</option>
+				<option value="Banana">Banan</option>
+				<option value="Orange">Apelsin</option>
+			</select><br><br>
+
+			<label for="message">Xabar</label>
+			<textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+			<form action="/submit" method="post">
+				<!--Barcha input, textarea, va select elementlari shu yerda joylashadi-->
+			</form>
+			<form>
+			<select>
+				<optgroup label="Mevalar">
+					<option value="apple">Olma</option>
+					<option value="Banana">Banan</option>
+				</optgroup >
+				<optgroup label="Sabzavotlar">
+					<option value="Carrot">Sabzi</option>
+					<option value="Broccoli">Brocoli</option>
+				</optgroup>
+			</select><br><br>
+
+			<details>
+				<summary>Ko'proq ma'lumot</summary>
+				Bu yerda qo'shimcha ma'lumotlar kiritilinadi
+			</details><br><br>
+
+			<label for="browsers">Brauzer tanlang:</label>
+			<input list="browsers" id="browser" name="browser">
+			<datalist id="browsers">
+				<option value="chrome">Chrome
+				<option value="Firefox">Fire fox
+				<option value="Safari">Safari
+				<option value="Edge">Edge
+			</datalist>
+
+			<input type="submit" name="" value="Jo'natish">
+			<input type="reset" name="" value="O'chirish">
+		</form>
+</body>
+</html>

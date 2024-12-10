@@ -1,0 +1,10 @@
+h1{
+    color:#0b0000
+}
+input[type="text"]
+{
+    background-color: rgb(255, 24, 24);
+    width: 150px;
+    height: 150px;
+    
+}

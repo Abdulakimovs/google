@@ -1,0 +1,44 @@
+.div1{
+    display: grid;
+    justify-content: center;
+}
+.email{
+    height: 50px;
+    width: 297px;
+    border-radius: 5px;
+}
+.password {
+    height: 50px;
+    width: 297px;
+    border-radius: 5px;
+}
+h5{
+    text-align: center;
+}
+.button{
+    width: 310px;
+    height: 50px;
+    background-color: blue;
+    color: wheat;
+    border-radius: 250px;
+}
+.hut{
+    width: 310px;
+    height: 50px;
+    border-radius: 25px;
+}
+.ht{
+    width: 310px;
+    height: 50px;
+    border-radius: 25px;
+}
+.t{
+    width: 310px;
+    height: 50px;
+    border-radius: 25px;
+}
+.h{
+    width: 20px;
+    height: 30px;
+    border-radius: 10px;
+}
