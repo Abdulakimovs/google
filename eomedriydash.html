@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #0f0f3a, #1a1a72);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .game-container {
+            position: relative;
+            width: 80%;
+            height: 50vh;
+            background: #222;
+            border: 2px solid #fff;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .player {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            width: 50px;
+            height: 50px;
+            background: #ff5722;
+            border-radius: 5px;
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10%;
+            background: #444;
+        }
+
+        .jump-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background: #ff5722;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .jump-button:active {
+            background: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="player" id="player"></div>
+        <div class="ground"></div>
+    </div>
+    <button class="jump-button" onclick="jump()">Jump</button>
+
+    <script>
+        const player = document.getElementById('player');
+        let isJumping = false;
+        let gravity = 0.9;
+
+        function jump() {
+            if (isJumping) return;
+
+            let position = 0;
+            isJumping = true;
+            let upInterval = setInterval(() => {
+                if (position >= 150) {
+                    clearInterval(upInterval);
+
+                    let downInterval = setInterval(() => {
+                        if (position <= 0) {
+                            clearInterval(downInterval);
+                            isJumping = false;
+                        } else {
+                            position -= 5;
+                            player.style.bottom = position + 'px';
+                        }
+                    }, 20);
+                } else {
+                    position += 5;
+                    player.style.bottom = position + 'px';
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>

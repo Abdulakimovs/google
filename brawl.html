@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars UI</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #1c1c3c, #562f72);
+            color: white;
+            font-family: 'Comic Sans MS', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .brawler-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background: linear-gradient(145deg, #ff4f4f, #ff7474);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .brawler-button:hover {
+            background: linear-gradient(145deg, #ff7474, #ff4f4f);
+        }
+
+        .brawler-arena {
+            width: 90%;
+            height: 50vh;
+            background: linear-gradient(145deg, #2a2a5c, #414176);
+            border: 3px solid #fff;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brawler {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #ff4f4f, #ff7474);
+            border-radius: 50%;
+            position: absolute;
+            animation: bounce 3s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                top: 10%;
+                left: 10%;
+            }
+            50% {
+                top: 70%;
+                left: 80%;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Brawl Stars Arena</h1>
+        <div class="buttons">
+            <button class="brawler-button">Shelly</button>
+            <button class="brawler-button">Colt</button>
+            <button class="brawler-button">Bull</button>
+            <button class="brawler-button">Jessie</button>
+        </div>
+        <div class="brawler-arena">
+            <div class="brawler"></div>
+        </div>
+    </div>
+</body>
+</html>

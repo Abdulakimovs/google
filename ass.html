@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+    <div id="game">
+        <div id="player"></div>
+        <div id="obstacle"></div>
+        <div id="score">Score: 0</div>
+    </div>
+    <script>
+        const player = document.getElementById('player');
+        let isJumping = false;
+        let gravity = 0.9;
+
+        function jump() {
+            if (isJumping) return;
+
+            let position = 0;
+            isJumping = true;
+            let upInterval = setInterval(() => {
+                if (position >= 150) {
+                    clearInterval(upInterval);
+
+                    let downInterval = setInterval(() => {
+                        if (position <= 0) {
+                            clearInterval(downInterval);
+                            isJumping = false;
+                        } else {
+                            position -= 5;
+                            player.style.bottom = position + 'px';
+                        }
+                    }, 20);
+                } else {
+                    position += 5;
+                    player.style.bottom = position + 'px';
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>

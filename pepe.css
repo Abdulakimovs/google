@@ -1,0 +1,15 @@
+p {
+    color: chocolate;
+}
+.class {
+    color: green;
+}
+#ID {
+    color: red;
+}
+a[href="https://youtube.com"] {
+    text-decoration: none;
+}
+.bos:hover {
+    background-color: gold;
+}

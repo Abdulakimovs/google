@@ -1,0 +1,129 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* LinkedIn logo */
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Login form */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input fields */
+input {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0077b5;
+}
+
+/* Submit button */
+button {
+    padding: 12px;
+    font-size: 14px;
+    color: white;
+    background-color: #0077b5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #005d8a;
+}
+
+/* Divider styling */
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.divider span {
+    font-weight: bold;
+    color: #aaa;
+}
+
+/* Google login button */
+.fb-login-btn {
+    background-color: #4285f4;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.fb-login-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Forgot password link */
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    font-size: 14px;
+    color: #0077b5;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Sign up prompt */
+.signup-prompt {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup-prompt a {
+    color: #0077b5;
+    text-decoration: none;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline;
+}

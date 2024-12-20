@@ -1,0 +1,52 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Base styling for TikTok-like buttons */
+.tiktok-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Follow Button Styles */
+.follow-btn {
+    background-color: #25F4F5;
+    color: white;
+    border: 2px solid #25F4F5;
+}
+
+.follow-btn:hover {
+    background-color: #1db0b4;
+    border-color: #1db0b4;
+}
+
+/* Play Button Styles */
+.play-btn {
+    background-color: #FF0050;
+    color: white;
+    border: 2px solid #FF0050;
+}
+
+.play-btn:hover {
+    background-color: #e4003c;
+    border-color: #e4003c;
+}

@@ -1,0 +1,18 @@
+p {
+    color:blue;/*Barcha <p> teglari matnini ko'k rangda bo'ladi*/
+}
+.my-class {
+    font-size: 20px;/*Klassga ega elementlar shrift o'lchami 20 px bo'ladi*/
+}
+#my-id {
+    background-color: yellow;/*IDga ega elementning orqa foni sariq bo'ladi*/
+}
+div p {
+    color: red;/* <div>ichidagi barcha <p> elementlari qizil rangda bo'ladi*/
+}
+div > p {
+    font-weight: bold;/* To'g'ridan-to'g'ri bola <p> elementlarini qalin qiladi*/
+}
+input[type="text"] {
+    border: 2px solid green;/*Atributi type="text"bo'lgan inputlar chegarasi yashil bo'ladi*/
+}   

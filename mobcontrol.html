@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Control Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-container {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            background: #222;
+            border: 3px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .player {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #ff4f4f;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="player" id="player"></div>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const container = document.querySelector('.game-container');
+
+        let playerPos = { x: container.clientWidth / 2, y: container.clientHeight / 2 };
+
+        const movePlayer = (dx, dy) => {
+            playerPos.x += dx;
+            playerPos.y += dy;
+
+            // Check boundaries
+            playerPos.x = Math.max(0, Math.min(container.clientWidth - player.offsetWidth, playerPos.x));
+            playerPos.y = Math.max(0, Math.min(container.clientHeight - player.offsetHeight, playerPos.y));
+
+            player.style.left = `${playerPos.x}px`;
+            player.style.top = `${playerPos.y}px`;
+        };
+
+        document.addEventListener('keydown', (e) => {
+            switch (e.key.toLowerCase()) {
+                case 'w':
+                    movePlayer(0, -10);
+                    break;
+                case 's':
+                    movePlayer(0, 10);
+                    break;
+                case 'a':
+                    movePlayer(-10, 0);
+                    break;
+                case 'd':
+                    movePlayer(10, 0);
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

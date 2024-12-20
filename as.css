@@ -1,0 +1,111 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .login-box {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 40px;
+    width: 300px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 2rem;
+    color: #262626;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fafafa;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #a8a8a8;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0077cc;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  
+  .divider hr {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: #dbdbdb;
+  }
+  
+  .divider span {
+    margin: 0 10px;
+    color: #8e8e8e;
+    font-size: 14px;
+  }
+  
+  .fb-login {
+    color: #385185;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 15px;
+  }
+  
+  .forgot-password {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  .signup-box {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .signup-box a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

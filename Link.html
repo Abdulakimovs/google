@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Minecraft</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background-color: #87ceeb; /* Sky blue */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <script>
+        // Get the canvas and set its size
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Block size and grid setup
+        const blockSize = 50;
+        const blocks = [];
+
+        // Mouse position
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Add event listener for mouse clicks
+        canvas.addEventListener('click', () => {
+            const gridX = Math.floor(mouseX / blockSize) * blockSize;
+            const gridY = Math.floor(mouseY / blockSize) * blockSize;
+            blocks.push({ x: gridX, y: gridY });
+            drawBlocks();
+        });
+
+        // Track mouse movement
+        canvas.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        // Draw blocks
+        function drawBlocks() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Sky background
+            ctx.fillStyle = '#87ceeb';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Ground layer
+            ctx.fillStyle = '#654321'; // Brown for dirt
+            ctx.fillRect(0, canvas.height - blockSize, canvas.width, blockSize);
+
+            // Draw placed blocks
+            for (const block of blocks) {
+                ctx.fillStyle = '#228B22'; // Green for grass block
+                ctx.fillRect(block.x, block.y, blockSize, blockSize);
+                ctx.strokeStyle = '#000'; // Block outline
+                ctx.strokeRect(block.x, block.y, blockSize, blockSize);
+            }
+
+            // Highlight grid cell under mouse
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+            const highlightX = Math.floor(mouseX / blockSize) * blockSize;
+            const highlightY = Math.floor(mouseY / blockSize) * blockSize;
+            ctx.strokeRect(highlightX, highlightY, blockSize, blockSize);
+        }
+
+        // Game loop
+        function gameLoop() {
+            drawBlocks();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start the game loop
+        gameLoop();
+
+    </script>
+</body>
+</html>
