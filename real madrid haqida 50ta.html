@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tezkor Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .quiz-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .quiz-container h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Tezkor Test</h1>
+        <div class="question" id="question">Savol yuklanmoqda...</div>
+        <div class="options" id="options"></div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const quizData = [
+            { question: "Real Madrid sardori kim?", options: ["Karim Benzema", "Luka Modrić", "Sergio Ramos", "Thibaut Courtois"], answer: "Karim Benzema" },
+            { question: "Real Madrid qachon tashkil topgan?", options: ["1900", "1902", "1910", "1920"], answer: "1902" },
+            { question: "Real Madrid nechta Chempionlar Ligasi kubogiga ega?", options: ["10", "11", "13", "14"], answer: "14" },
+            { question: "Real Madridning uy stadioni qanday nomlanadi?", options: ["Camp Nou", "Santiago Bernabéu", "Old Trafford", "Allianz Arena"], answer: "Santiago Bernabéu" },
+            { question: "Qaysi o'yinchi Real Madridning tarixiy gol uruvchisi?", options: ["Cristiano Ronaldo", "Raúl González", "Karim Benzema", "Alfredo Di Stéfano"], answer: "Cristiano Ronaldo" },
+            { question: "Real Madridning asosiy libos rangi nima?", options: ["Oq", "Qora", "Ko‘k", "Qizil"], answer: "Oq" },
+            { question: "Qaysi murabbiy Real Madridni eng ko‘p Chempionlar Ligasida g‘olib qilgan?", options: ["Zinedine Zidane", "Carlo Ancelotti", "Vicente del Bosque", "Miguel Muñoz"], answer: "Zinedine Zidane" },
+            { question: "Real Madridning eng katta raqobatchisi qaysi jamoa?", options: ["Barcelona", "Atlético Madrid", "Sevilla", "Valencia"], answer: "Barcelona" },
+            { question: "Real Madrid La Liga chempionatida nechta marta g‘olib bo‘lgan?", options: ["30", "33", "35", "37"], answer: "35" },
+            { question: "Real Madridda qaysi o'yinchi \"galaktiko\" loyihasining bir qismi edi?", options: ["David Beckham", "Cristiano Ronaldo", "Gareth Bale", "Eden Hazard"], answer: "David Beckham" },
+            { question: "Real Madridga 2009-yilda qaysi rekord transfer o'yinchi kelgan?", options: ["Kaká", "Cristiano Ronaldo", "Karim Benzema", "Xabi Alonso"], answer: "Cristiano Ronaldo" },
+            { question: "Real Madrid nechta FIFA Club World Cup g‘olibligini qo‘lga kiritgan?", options: ["2", "4", "5", "7"], answer: "5" },
+            { question: "Real Madridning eng yosh sardori kim bo‘lgan?", options: ["Sergio Ramos", "Raúl González", "Fernando Hierro", "Iker Casillas"], answer: "Iker Casillas" },
+            { question: "Qaysi davlat Real Madrid futbolchilarining ko‘pchiligi kelib chiqqan?", options: ["Ispaniya", "Braziliya", "Fransiya", "Argentina"], answer: "Ispaniya" },
+            { question: "Real Madridning akademiyasi qanday nomlanadi?", options: ["La Fábrica", "La Masia", "Castilla", "Cantera"], answer: "La Fábrica" },
+            { question: "Real Madridning mashhur futbolchilaridan biri Alfredo Di Stéfano qaysi davlat fuqarosi edi?", options: ["Argentina", "Ispaniya", "Kolumbiya", "Urugvay"], answer: "Argentina" },
+            { question: "Real Madridning tarixiy himoyachilaridan biri Roberto Carlos qaysi davlatdan?", options: ["Braziliya", "Portugaliya", "Ispaniya", "Argentina"], answer: "Braziliya" },
+            { question: "Real Madridning eng ko‘p o‘yin o‘tkazgan futbolchisi kim?", options: ["Raúl González", "Iker Casillas", "Sergio Ramos", "Karim Benzema"], answer: "Raúl González" },
+            { question: "Real Madridning asosiy homiysi qaysi kompaniya?", options: ["Adidas", "Emirates", "Nike", "Fly Emirates"], answer: "Emirates" },
+            { question: "Real Madridning \"El Clasico\"dagi ilk o‘yini qaysi yili bo‘lib o‘tgan?", options: ["1900", "1902", "1910", "1920"], answer: "1902" },
+            // Add more questions here...
+            { question: "Real Madridning asosiy stadionini kim qurdi?", options: ["Franco", "Perez", "Santiago Bernabeu", "Gonzalez"], answer: "Santiago Bernabeu" },
+            { question: "Real Madridning eng ko‘p gol urgan futbolchisi kim?", options: ["Karim Benzema", "Cristiano Ronaldo", "Raúl González", "Iker Casillas"], answer: "Cristiano Ronaldo" },
+            // Add 40 more questions in similar format...
+            { question: "Qaysi futbolchi Real Madridga 2013-yilda o'tgan?", options: ["Gareth Bale", "Cristiano Ronaldo", "Luka Modrić", "Karim Benzema"], answer: "Gareth Bale" },
+            { question: "Real Madridning boshqa sport jamoalari mavjudmi?", options: ["Ha", "Yo‘q", "Faqat futbol", "Futbol va basketbol"], answer: "Ha" }
+        ];
+
+        let currentQuestion = 0;
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const resultElement = document.getElementById('result');
+
+        function loadQuestion() {
+            const quiz = quizData[currentQuestion];
+            questionElement.textContent = quiz.question;
+            optionsElement.innerHTML = '';
+
+            quiz.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.onclick = () => checkAnswer(option);
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedOption) {
+            const correctAnswer = quizData[currentQuestion].answer;
+            if (selectedOption === correctAnswer) {
+                resultElement.textContent = 'To‘g‘ri javob!';
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = `Noto‘g‘ri! To‘g‘ri javob: ${correctAnswer}`;
+                resultElement.style.color = 'red';
+            }
+
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                setTimeout(() => {
+                    resultElement.textContent = '';
+                    loadQuestion();
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    resultElement.textContent = 'Test tugadi!';
+                    questionElement.textContent = '';
+                    optionsElement.innerHTML = '';
+                }, 2000);
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
